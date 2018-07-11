@@ -1,6 +1,6 @@
 # Code for the paper "Episodic Memory Deep Q-Networks" by Zichuan Lin, Tianqi Zhao, Guangwen Yang and Lintao Zhang
 
-If you use this code or the provided environments in your research, please cite the following paper:
+If you use this code in your research, please cite the following paper:
 
     @article{lin2018episodic,
       title={Episodic Memory Deep Q-Networks},
