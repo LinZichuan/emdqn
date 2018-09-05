@@ -161,13 +161,15 @@ if __name__ == '__main__':
                 ec_buffer[a].update_kdtree()
 
         def update_ec(sequence):
-            Rt = 0.
+            Rtd = 0.
             for seq in reversed(sequence):
                 s, a, r = seq
                 z = np.dot(rp, s.flatten())
-                Rt = r + 0.99 * Rt
+                Rtd = r + 0.99 * Rtd
                 z = z.reshape((latent_dim))
-                q = ec_buffer[a].add(z, Rt)
+                qd = ec_buffer[a].peek(z, Rtd, True)
+                if qd == None: #new action
+                    ec_buffer[a].add(z, Rtd)
 
 
         # Create training graph and replay buffer
